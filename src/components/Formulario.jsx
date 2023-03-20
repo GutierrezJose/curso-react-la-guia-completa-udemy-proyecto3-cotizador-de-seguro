@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import { obtenerDiferenciaYEar } from '../helpers/diferenciaYear';
 import { calcularMarca } from '../helpers/calcularMarca';
 import { obtenerPlan } from '../helpers/calculaTipoSeguro';
+import {PropTypes} from 'prop-types';
+
 const Campo = styled.div`
     display: flex;
     margin-bottom: 1rem;
@@ -102,7 +104,7 @@ export const Formulario = ({ guardarResumen, setCargando }) => {
             setTimeout(() => {
                 setCargando(false);
                 guardarResumen({
-                    cotizacion: resultado,
+                    cotizacion: Number(resultado),
                     datos
                 });
             }, 3000);
@@ -151,4 +153,9 @@ export const Formulario = ({ guardarResumen, setCargando }) => {
             <Boton type='submit'>Cotizar</Boton>
         </form>
     )
+}
+
+Formulario.propTypes = {
+    guardarResumen: PropTypes.func.isRequired,
+    setCargando: PropTypes.func.isRequired
 }
