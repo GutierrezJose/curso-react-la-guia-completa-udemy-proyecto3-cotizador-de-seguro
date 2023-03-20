@@ -5,7 +5,7 @@ const ContenedorHeader = styled.header`
   background-color: #26C6DA;
   padding: 10px;
   font-weight: bold;
-  color: #FFFFF;
+  color: #FFFFFF;
 `;
 
 const TextoHeader = styled.h1`
